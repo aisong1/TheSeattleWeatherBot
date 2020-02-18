@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="04acc40f-7906-4655-a03d-f7005b13f229" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XxEmnEB0StUHL0cRMQUGwf5mk6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570052352593" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/test" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/main" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SeattleWeatherBot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SeattleWeatherBot" />
+      <module name="Projects" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SeattleWeatherBot" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="04acc40f-7906-4655-a03d-f7005b13f229" name="Default Changelist" comment="" />
+      <created>1562107029781</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1562107029781</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="240" y="65" width="811" height="669" key="#Project_Structure" timestamp="1582067087625">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="240" y="65" width="811" height="669" key="#Project_Structure/0.0.1280.800@0.0.1280.800" timestamp="1582067087625" />
+    <state width="1238" height="150" key="GridCell.Tab.0.bottom" timestamp="1582067984234">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="150" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1582067984234" />
+    <state width="1238" height="150" key="GridCell.Tab.0.center" timestamp="1582067984232">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="150" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1582067984232" />
+    <state width="1238" height="150" key="GridCell.Tab.0.left" timestamp="1582067984231">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="150" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1582067984231" />
+    <state width="1238" height="150" key="GridCell.Tab.0.right" timestamp="1582067984233">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state width="1238" height="150" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1582067984233" />
+    <state x="141" y="23" key="SettingsEditor" timestamp="1581979803542">
+      <screen x="0" y="23" width="1280" height="699" />
+    </state>
+    <state x="141" y="23" key="SettingsEditor/0.23.1280.699@0.23.1280.699" timestamp="1581979803542" />
+  </component>
+</project>
