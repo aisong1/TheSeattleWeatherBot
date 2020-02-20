@@ -30,13 +30,14 @@ public class SeattleWeatherBot {
             // double celsMax = cwd.getMainData().getTempMax();
 
             String dateTime = "[" + cwd.getDateTime().toString() + "] ";
-            String currTemp = "It is currently " + cwd.getMainData().getTemp() + "˚F. ";
-            String minMaxTemp = "Today will have a max of " + cwd.getMainData().getTempMax() + "˚F and a min of "
-                    + cwd.getMainData().getTempMin() + "˚F. ";
+            String currTemp = "It is currently " + Math.round(cwd.getMainData().getTemp()) + "˚F. ";
+            String minMaxTemp = "Today will have a max of " + Math.round(cwd.getMainData().getTempMax()) + "˚F and a min of "
+                    + Math.round(cwd.getMainData().getTempMin()) + "˚F. ";
             String rain3H = "There has been " + rain + " mm of rain in the last three hours.";
             String message = dateTime + currTemp + minMaxTemp + rain3H;
-            Status status = twitter.updateStatus(message);
-            System.out.println("Successfully updated the status to [" + status.getText() + "].");
+            System.out.println(message);
+            //Status status = twitter.updateStatus(message);
+            //System.out.println("Successfully updated the status to [" + status.getText() + "].");
         } catch (Exception e) {
             e.printStackTrace();
         }
