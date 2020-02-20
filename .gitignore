@@ -2,3 +2,6 @@
 .DS_Store
 *.idea
 *.settings
+twitter4j.properties
+.env
+
