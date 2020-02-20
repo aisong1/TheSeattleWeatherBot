@@ -35,9 +35,8 @@ public class SeattleWeatherBot {
                     + Math.round(cwd.getMainData().getTempMin()) + "˚F. ";
             String rain3H = "There has been " + rain + " mm of rain in the last three hours.";
             String message = dateTime + currTemp + minMaxTemp + rain3H;
-            System.out.println(message);
-            //Status status = twitter.updateStatus(message);
-            //System.out.println("Successfully updated the status to [" + status.getText() + "].");
+            Status status = twitter.updateStatus(message);
+            System.out.println("Successfully updated the status to [" + status.getText() + "].");
         } catch (Exception e) {
             e.printStackTrace();
         }
