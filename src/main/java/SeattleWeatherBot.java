@@ -7,37 +7,42 @@ import net.aksingh.owmjapis.core.OWM;
 import net.aksingh.owmjapis.api.APIException;
 import net.aksingh.owmjapis.model.CurrentWeather;
 
-import java.io.IOException;
-
+import io.github.cdimascio.dotenv.Dotenv;
 
 
 public class SeattleWeatherBot {
 
-    public static void main(String[] args) throws TwitterException, IOException, APIException {
+    public static void main(String[] args) {
 
-        Twitter twitter = TwitterFactory.getSingleton();
+        try {
+            // Create Twitter instance
+            Twitter twitter = TwitterFactory.getSingleton();
 
-        OWM owm = new OWM(System.getenv("OWM_API_KEY"));
-        CurrentWeather cwd = owm.currentWeatherByCityId(5809844);
-        System.out.println(cwd.getMainData().getTemp());
+            // Get environment variables
+            Dotenv dotenv = Dotenv.load();
 
+            OWM owm = new OWM(dotenv.get("OWM_API_KEY"));
+            owm.setUnit(OWM.Unit.IMPERIAL);
+            CurrentWeather cwd = owm.currentWeatherByCityId(5809844);
 
-        /*ForecastRequest request = new ForecastRequestBuilder()
-                .key(new APIKey("7f2f84004262bae12e55ae03e9071e0d"))
-                .location(new GeoCoordinates(new Longitude(-122.303200), new Latitude(47.655548))).build();
+            double rain = (cwd.hasRainData()) ? cwd.getRainData().getPrecipVol3h() : 0;
 
-        DarkSkyJacksonClient client = new DarkSkyJacksonClient();
-        Forecast forecast = client.forecast(request);
-        Double currentInC = forecast.getCurrently().getTemperature();
-        Double currentInF = (currentInC*(9/5)) + 32;
+            // owm.setUnit(OWM.Unit.METRIC);
+            // double cels = cwd.getMainData().getTemp();
+            // double celsMin = cwd.getMainData().getTempMin();
+            // double celsMax = cwd.getMainData().getTempMax();
 
-        System.out.println(currentInF); */
-
-        String message = "The current weather in Seattle is " + cwd.getMainData();
-        System.out.println(message);
-        // Status status = twitter.updateStatus(message);
-        // System.out.println("Successfully updated the status to [" + status.getText() + "].");
-
+            String dateTime = "[" + cwd.getDateTime().toString() + "] ";
+            String currTemp = "It is currently " + cwd.getMainData().getTemp() + "˚F. ";
+            String minMaxTemp = "Today will have a max of " + cwd.getMainData().getTempMax() + "˚F and a min of "
+                    + cwd.getMainData().getTempMin() + "˚F. ";
+            String rain3H = "There has been " + rain + " mm of rain in the last three hours.";
+            String message = dateTime + currTemp + minMaxTemp + rain3H;
+            Status status = twitter.updateStatus(message);
+            System.out.println("Successfully updated the status to [" + status.getText() + "].");
+        } catch (TwitterException | APIException e) {
+            e.printStackTrace();
+        }
     }
 
 

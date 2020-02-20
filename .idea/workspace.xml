@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04acc40f-7906-4655-a03d-f7005b13f229" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/twitter4j.properties" beforeDir="false" />
+    <list default="true" id="04acc40f-7906-4655-a03d-f7005b13f229" name="Default Changelist" comment="˚">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SeattleWeatherBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SeattleWeatherBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tweeter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SeattleWeatherBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SeattleWeatherBot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Tweeter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitter4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/twitter4j.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,26 +85,34 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="240" y="65" width="811" height="669" key="#Project_Structure" timestamp="1582067087625">
+    <state x="0" y="65" width="1051" height="669" key="#Project_Structure" timestamp="1582152868698">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="240" y="65" width="811" height="669" key="#Project_Structure/0.0.1280.800@0.0.1280.800" timestamp="1582067087625" />
-    <state width="1238" height="150" key="GridCell.Tab.0.bottom" timestamp="1582067984234">
+    <state x="0" y="65" width="1051" height="669" key="#Project_Structure/0.0.1280.800@0.0.1280.800" timestamp="1582152868698" />
+    <state x="264" y="2" key="CommitChangelistDialog2" timestamp="1582159561882">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state width="1238" height="150" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1582067984234" />
-    <state width="1238" height="150" key="GridCell.Tab.0.center" timestamp="1582067984232">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state x="264" y="2" key="CommitChangelistDialog2/0.0.1280.800@0.0.1280.800" timestamp="1582159561882" />
+    <state width="1238" height="150" key="GridCell.Tab.0.bottom" timestamp="1582161219208">
+      <screen x="0" y="23" width="1280" height="699" />
     </state>
-    <state width="1238" height="150" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1582067984232" />
-    <state width="1238" height="150" key="GridCell.Tab.0.left" timestamp="1582067984231">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="1238" height="150" key="GridCell.Tab.0.bottom/0.0.1280.800@0.0.1280.800" timestamp="1582160714499" />
+    <state width="1238" height="150" key="GridCell.Tab.0.bottom/0.23.1280.699@0.23.1280.699" timestamp="1582161219208" />
+    <state width="1238" height="150" key="GridCell.Tab.0.center" timestamp="1582161219205">
+      <screen x="0" y="23" width="1280" height="699" />
     </state>
-    <state width="1238" height="150" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1582067984231" />
-    <state width="1238" height="150" key="GridCell.Tab.0.right" timestamp="1582067984233">
-      <screen x="0" y="0" width="1280" height="800" />
+    <state width="1238" height="150" key="GridCell.Tab.0.center/0.0.1280.800@0.0.1280.800" timestamp="1582160714497" />
+    <state width="1238" height="150" key="GridCell.Tab.0.center/0.23.1280.699@0.23.1280.699" timestamp="1582161219205" />
+    <state width="1238" height="150" key="GridCell.Tab.0.left" timestamp="1582161219203">
+      <screen x="0" y="23" width="1280" height="699" />
     </state>
-    <state width="1238" height="150" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1582067984233" />
+    <state width="1238" height="150" key="GridCell.Tab.0.left/0.0.1280.800@0.0.1280.800" timestamp="1582160714496" />
+    <state width="1238" height="150" key="GridCell.Tab.0.left/0.23.1280.699@0.23.1280.699" timestamp="1582161219203" />
+    <state width="1238" height="150" key="GridCell.Tab.0.right" timestamp="1582161219207">
+      <screen x="0" y="23" width="1280" height="699" />
+    </state>
+    <state width="1238" height="150" key="GridCell.Tab.0.right/0.0.1280.800@0.0.1280.800" timestamp="1582160714498" />
+    <state width="1238" height="150" key="GridCell.Tab.0.right/0.23.1280.699@0.23.1280.699" timestamp="1582161219207" />
     <state x="141" y="23" key="SettingsEditor" timestamp="1581979803542">
       <screen x="0" y="23" width="1280" height="699" />
     </state>
