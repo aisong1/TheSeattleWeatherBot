@@ -1,14 +1,11 @@
 import twitter4j.Status;
 import twitter4j.Twitter;
-import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 
 import net.aksingh.owmjapis.core.OWM;
-import net.aksingh.owmjapis.api.APIException;
 import net.aksingh.owmjapis.model.CurrentWeather;
 
 import io.github.cdimascio.dotenv.Dotenv;
-
 
 public class SeattleWeatherBot {
 
@@ -40,7 +37,7 @@ public class SeattleWeatherBot {
             String message = dateTime + currTemp + minMaxTemp + rain3H;
             Status status = twitter.updateStatus(message);
             System.out.println("Successfully updated the status to [" + status.getText() + "].");
-        } catch (TwitterException | APIException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
