@@ -18,11 +18,12 @@ public class SeattleWeatherBot {
             // Get environment variables
             Dotenv dotenv = Dotenv.load();
 
-            OWM owm = new OWM(System.getenv("OWMKEY"));
+            OWM owm = new OWM(System.getenv("OWM_API_KEY"));
             owm.setUnit(OWM.Unit.IMPERIAL);
             CurrentWeather cwd = owm.currentWeatherByCityId(5809844);
 
-            double rain = (cwd.hasRainData()) ? cwd.getRainData().getPrecipVol3h() : 0;
+
+            double rain = (cwd.getRainData().getPrecipVol3h() != null) ? cwd.getRainData().getPrecipVol3h() : 0;
 
             String dateTime = "[" + cwd.getDateTime().toString() + "] ";
             String currTemp = "It is currently " + Math.round(cwd.getMainData().getTemp()) + "˚F. ";
