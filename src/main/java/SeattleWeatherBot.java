@@ -16,7 +16,7 @@ public class SeattleWeatherBot {
             Twitter twitter = TwitterFactory.getSingleton();
 
             // Get environment variables
-            Dotenv dotenv = Dotenv.load();
+            // Dotenv dotenv = Dotenv.load();
 
             OWM owm = new OWM(System.getenv("OWM_API_KEY"));
             owm.setUnit(OWM.Unit.IMPERIAL);
