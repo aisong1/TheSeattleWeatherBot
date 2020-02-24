@@ -18,7 +18,7 @@ public class SeattleWeatherBot {
             // Get environment variables
             Dotenv dotenv = Dotenv.load();
 
-            OWM owm = new OWM(dotenv.get("OWM_API_KEY"));
+            OWM owm = new OWM(System.getenv("OWMKEY"));
             owm.setUnit(OWM.Unit.IMPERIAL);
             CurrentWeather cwd = owm.currentWeatherByCityId(5809844);
 

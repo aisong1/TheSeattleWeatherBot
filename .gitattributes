@@ -1,6 +1,0 @@
-# Files that are going to be encrypted
-twitter4j.properties filter=git-crypt diff=git-crypt
-.env filter=git-crypt diff=git-crypt
-
-# Making sure that .gitattributes is never encrpyted. 
-.gitattributes !filter !diff 
