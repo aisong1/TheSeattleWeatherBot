@@ -6,6 +6,7 @@ import net.aksingh.owmjapis.core.OWM;
 import net.aksingh.owmjapis.model.CurrentWeather;
 
 import io.github.cdimascio.dotenv.Dotenv;
+import twitter4j.conf.ConfigurationBuilder;
 
 public class SeattleWeatherBot {
 
@@ -13,7 +14,16 @@ public class SeattleWeatherBot {
 
         try {
             // Create Twitter instance
-            Twitter twitter = TwitterFactory.getSingleton();
+            // Twitter twitter = TwitterFactory.getSingleton();
+
+            ConfigurationBuilder cb = new ConfigurationBuilder();
+            cb.setDebugEnabled(true)
+                    .setOAuthConsumerKey(System.getenv("consumerKey"))
+                    .setOAuthConsumerSecret(System.getenv("consumerSecret"))
+                    .setOAuthAccessToken(System.getenv("accessToken"))
+                    .setOAuthAccessTokenSecret(System.getenv("accessTokenSecret"));
+            TwitterFactory tf = new TwitterFactory(cb.build());
+            Twitter twitter = tf.getInstance();
 
             // Get environment variables
             // Dotenv dotenv = Dotenv.load();
@@ -23,7 +33,7 @@ public class SeattleWeatherBot {
             CurrentWeather cwd = owm.currentWeatherByCityId(5809844);
 
 
-            double rain = (cwd.getRainData().getPrecipVol3h() != null) ? cwd.getRainData().getPrecipVol3h() : 0;
+            double rain = (cwd.hasRainData() && cwd.getRainData().getPrecipVol3h() != null) ? cwd.getRainData().getPrecipVol3h() : 0;
 
             String dateTime = "[" + cwd.getDateTime().toString() + "] ";
             String currTemp = "It is currently " + Math.round(cwd.getMainData().getTemp()) + "˚F. ";
