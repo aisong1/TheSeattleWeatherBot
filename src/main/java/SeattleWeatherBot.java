@@ -24,11 +24,6 @@ public class SeattleWeatherBot {
 
             double rain = (cwd.hasRainData()) ? cwd.getRainData().getPrecipVol3h() : 0;
 
-            // owm.setUnit(OWM.Unit.METRIC);
-            // double cels = cwd.getMainData().getTemp();
-            // double celsMin = cwd.getMainData().getTempMin();
-            // double celsMax = cwd.getMainData().getTempMax();
-
             String dateTime = "[" + cwd.getDateTime().toString() + "] ";
             String currTemp = "It is currently " + Math.round(cwd.getMainData().getTemp()) + "˚F. ";
             String minMaxTemp = "Today will have a max of " + Math.round(cwd.getMainData().getTempMax()) + "˚F and a min of "
