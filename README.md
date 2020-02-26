@@ -18,7 +18,7 @@ for the specified location.
 
 # Screenshots 
 
-![Screenshot 1](aisong1.github.com/TheSeattleWeatherBot/img/screenshot1.jpg)
+![Screenshot 1](/img/screenshot1.jpg?raw=true "Screenshot 1")
 
 # Installation and Setup
 
