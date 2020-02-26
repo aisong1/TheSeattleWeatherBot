@@ -1,7 +1,9 @@
 # misc
-.DS_Store
 *.idea
 *.settings
+target
 twitter4j.properties
 .bash_profile
-target
+.DS_Store
+.classpath
+.project
