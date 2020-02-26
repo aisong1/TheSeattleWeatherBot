@@ -40,7 +40,7 @@ public class SeattleWeatherBot {
             }
 
             // Set from UTC (used on Heroku servers) to Seattle local time, PST.
-            LocalDateTime now = LocalDateTime.now().plusHours(-20);
+            LocalDateTime now = LocalDateTime.now().plusHours(-8);
             ZoneId id = ZoneId.of("America/Los_Angeles");
             ZonedDateTime zonedDateTime = ZonedDateTime.of(now, id);
             String formattedDate = DateTimeFormatter.ofPattern("MM-dd-yyyy HH:mm").format(zonedDateTime);
@@ -54,8 +54,8 @@ public class SeattleWeatherBot {
             String rain3H = "There has been " + rain + " mm of rain in the last three hours.";
             String message = dateTime + currTemp + minMaxTemp + rain3H;
             System.out.println(message);
-            Status status = twitter.updateStatus(message);
-            System.out.println("Successfully updated the status to [" + status.getText() + "].");
+            //Status status = twitter.updateStatus(message);
+            //System.out.println("Successfully updated the status to [" + status.getText() + "].");
 
         } catch (Exception e) {
             e.printStackTrace();
