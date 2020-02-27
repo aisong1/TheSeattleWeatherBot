@@ -18,7 +18,7 @@ for the specified location.
 
 # Screenshots 
 
-![Screenshot 1](/img/screenshot1.jpg?raw=true "Screenshot 1")
+To come. 
 
 
 # Reflection
