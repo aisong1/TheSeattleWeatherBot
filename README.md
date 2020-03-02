@@ -4,23 +4,68 @@ An application to tweet daily, automated weather updates for the city of Seattle
 
 Built with Java, Maven, and Heroku. Written with IntelliJ.
 
-APIs: [Twitter4J](http://twitter4j.org/en/index.html), [OpenWeatherMap](https://openweathermap.org/api) (OWM).
+APIs: 
+- [Twitter4J](http://twitter4j.org/en/index.html) 
+- [OpenWeatherMap](https://openweathermap.org/api) (OWM)
+  - Navigated using Ashutosh Kumar Singh's handy [OWM JAPIs](https://bitbucket.org/aksinghnet/owm-japis/src/master/)
 
 [Check it out here!](https://twitter.com/bot_seattle)
 
 # Project Status
 
-Completed. 
+Completed. Fully running and automated since Feb 25, 2020. 
 
-Fully running and automated since Feb 25, 2020. Possible future update would be to implement an option for 
-users to direct message the account with latitude and longitude coordinates or a city name and return a weather summary 
-for the specified location. 
+Only reported issue is that the posted conditions are *consistently inaccurate*. Current temperatures along with highs and lows for the day can be off by ±10 ˚F at a time. 
+
+You might be asking yourself what the point of an inaccurate weather bot is and to that I say *most* (if not all) other weather APIs I've seen report inaccuracies to a certain degree. In other words, improving the accuracy is out of my hands. I'm always open to suggestions if you know of a better (and free) API alternative I can use!
+
+Possible future update would be to implement an option for users to direct message the account with a city name or latitude and longitude coordinates and return a weather summary for the specified location. 
+
+# Setup and Installation
+
+You can use the framework I have to set up your very own Twitter weather bot.
+
+1. Create a new folder to store your project in. 
+2. Make an account with [Heroku](https://signup.heroku.com/), if you don't already have one.
+3. Open Terminal, navigate to the folder you created and clone the repo using `git clone`. If you're unfamiliar with git, check out this amazing Git-how-to graphic [here](https://rogerdudler.github.io/git-guide/). 
+4. Create new accounts with Twitter and OWM.
+    1. Apply for a [developer profile with Twitter](https://developer.twitter.com/en.html) using your newly created account and generate [API keys](https://developer.twitter.com/en/apps).
+    2. Access your OWM API keys by logging in and navigating [here](https://home.openweathermap.org/api_keys).
+
+## Running locally
+1. Go to this part of the code in `SeattleWeatherBot.java`.
+```java
+ConfigurationBuilder cb = new ConfigurationBuilder();
+cb.setDebugEnabled(true)
+  .setOAuthConsumerKey(System.getenv("consumerKey"))
+  .setOAuthConsumerSecret(System.getenv("consumerSecret"))
+  .setOAuthAccessToken(System.getenv("accessToken"))
+  .setOAuthAccessTokenSecret(System.getenv("accessTokenSecret"));
+TwitterFactory tf = new TwitterFactory(cb.build());
+Twitter twitter = tf.getInstance();
+
+OWM owm = new OWM(System.getenv("OWM_API_KEY"));
+```
+Replace all `System.getenv("...")` with the API keys generated in steps 4i and 4ii.
+
+2. Make sure you have a working version of [Maven](https://maven.apache.org/install.html) installed. OS X usually comes with Maven pre-installed: check `mvn -version` in Terminal or run `java` to initiate install.  
+
+## Automating on Heroku
+5. Follow [this](https://devcenter.heroku.com/articles/run-non-web-java-processes-on-heroku). Quick notes:
+    1. Make sure you have a working version of [Maven](https://maven.apache.org/install.html) installed. OS X usually comes with Maven installed: check `mvn -version` in Terminal or run `java` to initiate install.  
+    2. The `pom.xml` is already made for you.
+    3. **After creating your Heroku app but before deploying the code**, visit the app by going to your Heroku [dashboard](dashboard.heroku.com). Add your unique API keys 
+    4. Skip the "Scaling worker processes" section and go to "One-off dynos" since we want Heroku to "manully" input and run `heroku run "sh target/bin/weather"` every morning. 
+    5. Schedule your one off dyno to run at a specific time or interval of time with Heroku's [Scheduler](https://elements.heroku.com/addons/scheduler) addon. (Limited if you want to schedule using a unique or odd schedule. Consider using a [custom clock process](https://devcenter.heroku.com/articles/scheduled-jobs-custom-clock-processes) instead.)
+6. Enjoy your bot!
+
+Stuck? Read up on the **documentations** for [Twitter4J](http://twitter4j.org/javadoc/index.html) and [OWM JAPIs](https://bitbucket.org/aksinghnet/owm-japis/src/master/docs/). Still stuck? Shoot me an [email](andrewsong61@gmail.com). Always happy to help :)
 
 # Screenshots 
 
-![Homepage](/img/screenshot1.jpg?raw=true "Screenshot 1")
-![Tweet thread](/img/screenshot2.jpg?raw=true "Screenshot 2")
-![Tweet example](/img/screenshot3.jpg?raw=true "Screenshot 3")
+![Homepage](/img/screenshot1.jpg?raw=true "Main page") 
+![Tweet thread](/img/screenshot2.jpg?raw=true "Tweet thread") 
+![Tweet example](/img/screenshot3.jpg?raw=true "Tweet example")
 
 
 # Reflection
