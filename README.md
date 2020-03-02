@@ -1,4 +1,6 @@
-# The Seattle Weather Bot
+# The Seattle Weather Bot 
+
+![Icon](/img/washington.png?raw=true "Icon")
 
 An application to tweet daily, automated weather updates for the city of Seattle, WA.
 
@@ -147,4 +149,6 @@ Connect with me on [LinkedIn](https://www.linkedin/in/andrewisong).
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
+- Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 - Copyright 2020 © [Andrew Song](https://www.linkedin/in/andrewisong)
+
