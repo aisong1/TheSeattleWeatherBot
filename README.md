@@ -18,12 +18,14 @@ for the specified location.
 
 # Screenshots 
 
-To come. 
+![Homepage](/img/screenshot1.jpg?raw=true "Screenshot 1")
+![Tweet thread](/img/screenshot2.jpg?raw=true "Screenshot 2")
+![Tweet example](/img/screenshot3.jpg?raw=true "Screenshot 3")
 
 
 # Reflection
 
-This was a two month long project built during my senior year at the University of Washington. Project goals included creating a project outside of classes and interacting with APIs and their documentations. 
+This was a one month long project built during my senior year at the University of Washington. Project goals included creating a project outside of classes and interacting with APIs and their documentations. 
 
 In the beginning, the goal was to build an application that tweeted the current temperature, the highs and lows for the day, and the percent chance of rain. After all, the Emerald City isn't known to have lots of rain for nothing. However, due to limitations of OWM, percent chance of rain is not available so I instead opted to report the amount of rain (mm) fallen in the past 3 hours. I originally wanted the app to run on my local machine, for fun, until I came across Heroku and thought to automate it. 
 
