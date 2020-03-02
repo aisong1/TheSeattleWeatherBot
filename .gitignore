@@ -2,8 +2,8 @@
 *.idea
 *.settings
 target
-twitter4j.properties
 .bash_profile
 .DS_Store
 .classpath
 .project
+Projects.iml
