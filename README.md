@@ -27,11 +27,25 @@ You can use the framework I have to set up your very own Twitter weather bot.
 
 1. Create a new folder to store your project in. 
 2. Make an account with [Heroku](https://signup.heroku.com/), if you don't already have one.
-3. Open Terminal, navigate to the folder you created and clone the repo using `git clone`. If you're unfamiliar with git, check out this amazing Git-how-to graphic [here](https://rogerdudler.github.io/git-guide/). 
+3. Open Terminal, navigate to the folder you created and clone the repo using 
+```shell
+$ git clone git@github.com:aisong1/TheSeattleWeatherBot.git
+``` 
+If you're unfamiliar with git, check out this amazing Git-how-to graphic [here](https://rogerdudler.github.io/git-guide/).
+
 4. Create new accounts with Twitter and OWM.
     1. Apply for a [developer profile with Twitter](https://developer.twitter.com/en.html) using your newly created account and generate [API keys](https://developer.twitter.com/en/apps).
     2. Access your OWM API keys by logging in and navigating [here](https://home.openweathermap.org/api_keys).
-5. Make sure you have a working version of [Maven](https://maven.apache.org/install.html) installed. OS X usually comes with Maven pre-installed: check `mvn -version` in Terminal or run `java` to initiate install. 
+5. Make sure you have a working version of [Maven](https://maven.apache.org/install.html) installed. OS X usually comes with Maven pre-installed: 
+> Check 
+```shell
+$ mvn -version
+```
+> or run 
+```shell
+$ java
+```
+> to initiate install. 
 
 ## Running locally
 1. Go to the following block in `SeattleWeatherBot.java`.
@@ -47,34 +61,65 @@ Twitter twitter = tf.getInstance();
 
 OWM owm = new OWM(System.getenv("OWM_API_KEY"));
 ```
-Replace all `System.getenv("...")` with the API keys generated in steps 4i and 4ii.
+Replace all 
+```java
+System.getenv("...")
+```
+with the API keys generated in steps 4i and 4ii.
  
-2. Run `$ mvn package` in Terminal.
-3. Make sure your `JAVA_HOME` is defined correctly, making such changes as 
-```nano
+2. Run 
+```shell
+$ mvn package
+```
+Make sure your `JAVA_HOME` is defined correctly, making such changes as 
+```
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=$JAVA_HOME/jre/bin:$PATH
 ```
-to your `.bash_profile` using `$ nano .bash_profile`. After adding the necessary changes, save the changes with `cmd+o`, hitting `enter` and then exiting the file with `cmd+x`.
+> to your `.bash_profile` using 
+```shell
+$ nano .bash_profile
+``` 
+> save the changes with `cmd+o`, hitting `enter` and then exiting the file with `cmd+x`.
 
-4. Run `$ sh target/bin/weather`
-5. If it runs properly, the output will say 
+3. Run 
+```shell
+$ sh target/bin/weather
+```
+4. If it runs properly, the output will say 
 ```
 [current date-time] It is currently (temp) ˚F. Today will have a max of (max) ˚F and a min of (min) ˚F. There has been (rain) mm of rain in the last three hours.
 Successfully updated the status to [" (above) "].
 ```
-and you can move onto the next section. Else, run any errors through this handy [tool](google.com).
+and you can move onto the next section. Else, run any errors through this handy [tool](https://www.google.com).
 
 ## Automating on Heroku
-1. Revert code back to `System.getenv("...")` in `SeattleWeatherBot.java`.
+1. Revert code back to 
+```java
+System.getenv("...")
+```
+in `SeattleWeatherBot.java`.
+
 2. Follow [this](https://devcenter.heroku.com/articles/run-non-web-java-processes-on-heroku). Quick notes: 
-    2. The `pom.xml` is already made for you.
-    3. **After creating your Heroku app but before deploying the code**, visit the app by going to your Heroku [dashboard](dashboard.heroku.com). Add your unique API keys as "Config Vars" in your app's Settings. Name your Vars with the name it is given in `System.getenv("match-with-this-name-here")`. For example, my Twitter app's consumer key is saved as "consumerKey" in Heroku so that it matches with `System.getenv("consumerKey")`.
-    4. Skip the "Scaling worker processes" section and go to "One-off dynos" since we want Heroku to "manully" input and run `heroku run "sh target/bin/weather"` every morning. 
-    5. Schedule your one off dyno to run at a specific time or interval of time with Heroku's [Scheduler](https://elements.heroku.com/addons/scheduler) addon. (Limited if you want to schedule using a unique or odd schedule. Consider using a [custom clock process](https://devcenter.heroku.com/articles/scheduled-jobs-custom-clock-processes) instead.)
+    1. The `pom.xml` is already made for you.
+    2. **After creating your Heroku app but before deploying the code**, visit the app by going to your Heroku [dashboard](dashboard.heroku.com). Add your unique API keys as "Config Vars" in your app's Settings. Name your Vars with the name it is given in 
+    ```java
+    System.getenv("match-with-this-name-here")
+    ``` 
+    > For example, my Twitter app's consumer key is saved as "consumerKey" in Heroku so that it matches with
+    ```java 
+    .setOAuthConsumerKey(System.getenv("consumerKey"));
+    ```
+    3. Skip the "Scaling worker processes" section and go to "One-off dynos" since we want Heroku to "manully" input and run
+    ```shell
+    $ heroku run "sh target/bin/weather"
+    ``` 
+    every morning. 
+    
+    4. Schedule your one off dyno to run at a specific time or interval of time with Heroku's [Scheduler](https://elements.heroku.com/addons/scheduler) addon. (Limited if you want to schedule using a unique or odd schedule. Consider using a [custom clock process](https://devcenter.heroku.com/articles/scheduled-jobs-custom-clock-processes) instead.)
 3. Enjoy your bot!
 
-Stuck? Read up on the **documentations** for [Twitter4J](http://twitter4j.org/javadoc/index.html) and [OWM JAPIs](https://bitbucket.org/aksinghnet/owm-japis/src/master/docs/). Still stuck? Shoot me an [email](andrewsong61@gmail.com). Always happy to help :)
+Stuck? Read up on the **documentations** for [Twitter4J](http://twitter4j.org/javadoc/index.html) and [OWM JAPIs](https://bitbucket.org/aksinghnet/owm-japis/src/master/docs/). Still stuck? Shoot me an [email](mailto:andrewsong61@gmail.com). Always happy to help :)
 
 # Screenshots 
 
@@ -93,3 +138,15 @@ Some of the main challenges I ran into were Authentication and Cloud Services. I
 
 The reason I chose to write this project in Java was because Java is the language I was most familiar with. I initially thought that this familiarity would make the project easier to develop, but the difficulties I faced pushed my understanding to the limit and made resolving issues that much more rewarding. 
 
+# Contact 
+
+I'm an aspiring software developer looking for full-time positions in the Greater Seattle Area! 
+
+Connect with me on [LinkedIn](https://www.linkedin/in/andrewisong).
+
+# Licensing
+
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
+
+- **[MIT license](http://opensource.org/licenses/mit-license.php)**
+- Copyright 2020 © [Andrew Song](https://www.linkedin/in/andrewisong)
