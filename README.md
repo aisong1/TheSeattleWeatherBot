@@ -12,13 +12,13 @@ APIs: [Twitter4J](http://twitter4j.org/en/index.html), [OpenWeatherMap](https://
 
 Completed. 
 
-Fully running and automated since Feb 26, 2020. Possible future update would be to implement an option for 
+Fully running and automated since Feb 25, 2020. Possible future update would be to implement an option for 
 users to direct message the account with latitude and longitude coordinates or a city name and return a weather summary 
 for the specified location. 
 
 # Screenshots 
 
-![Screenshot 1](/img/screenshot1.jpg?raw=true "Screenshot 1")
+To come. 
 
 
 # Reflection
