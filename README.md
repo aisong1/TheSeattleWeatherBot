@@ -61,22 +61,22 @@ Twitter twitter = tf.getInstance();
 
 OWM owm = new OWM(System.getenv("OWM_API_KEY"));
 ```
-Replace all 
+- Replace all 
 ```java
 System.getenv("...")
 ```
-with the API keys generated in steps 4i and 4ii.
+- with the API keys generated in steps 4i and 4ii surrounded with `" "`.
  
 2. Run 
 ```shell
 $ mvn package
 ```
-Make sure your `JAVA_HOME` is defined correctly, making such changes as 
+- Make sure your `JAVA_HOME` is defined correctly, making such changes as 
 ```
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=$JAVA_HOME/jre/bin:$PATH
 ```
-> to your `.bash_profile` using 
+- to your `.bash_profile` using 
 ```shell
 $ nano .bash_profile
 ``` 
@@ -96,9 +96,8 @@ and you can move onto the next section. Else, run any errors through this handy 
 ## Automating on Heroku
 1. Revert code back to 
 ```java
-System.getenv("...")
+System.getenv("...") // in SeattleWeatherBot.java
 ```
-in `SeattleWeatherBot.java`.
 
 2. Follow [this](https://devcenter.heroku.com/articles/run-non-web-java-processes-on-heroku). Quick notes: 
     1. The `pom.xml` is already made for you.
@@ -106,15 +105,14 @@ in `SeattleWeatherBot.java`.
     ```java
     System.getenv("match-with-this-name-here")
     ``` 
-    > For example, my Twitter app's consumer key is saved as "consumerKey" in Heroku so that it matches with
+    - For example, my Twitter app's consumer key is saved as "consumerKey" in Heroku so that it matches with
     ```java 
-    .setOAuthConsumerKey(System.getenv("consumerKey"));
+    .setOAuthConsumerKey(System.getenv("consumerKey")); // line 23
     ```
-    3. Skip the "Scaling worker processes" section and go to "One-off dynos" since we want Heroku to "manully" input and run
+    3. Skip the "Scaling worker processes" section and go to "One-off dynos" since we want Heroku to "manully" run
     ```shell
     $ heroku run "sh target/bin/weather"
     ``` 
-    every morning. 
     
     4. Schedule your one off dyno to run at a specific time or interval of time with Heroku's [Scheduler](https://elements.heroku.com/addons/scheduler) addon. (Limited if you want to schedule using a unique or odd schedule. Consider using a [custom clock process](https://devcenter.heroku.com/articles/scheduled-jobs-custom-clock-processes) instead.)
 3. Enjoy your bot!
