@@ -1,4 +1,6 @@
-# The Seattle Weather Bot
+<img align="left" width="80" height="80" src="/img/washington.png" alt="Seattle Weather Bot Icon">
+
+# The Seattle Weather Bot 
 
 An application to tweet daily, automated weather updates for the city of Seattle, WA.
 
@@ -121,9 +123,9 @@ Stuck? Read up on the **documentations** for [Twitter4J](http://twitter4j.org/ja
 
 # Screenshots 
 
-![Homepage](/img/screenshot1.jpg?raw=true "Main page") 
-![Tweet thread](/img/screenshot2.jpg?raw=true "Tweet thread") 
-![Tweet example](/img/screenshot3.jpg?raw=true "Tweet example")
+<img height="560" src="/img/screenshot1.jpg" alt="Homepage">
+<img height="312" src="/img/screenshot2.jpg" alt="Timeline">
+<img height="200" src="/img/screenshot3.jpg" alt="Tweet">
 
 
 # Reflection
@@ -147,4 +149,6 @@ Connect with me on [LinkedIn](https://www.linkedin/in/andrewisong).
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
+- Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
 - Copyright 2020 © [Andrew Song](https://www.linkedin/in/andrewisong)
+
