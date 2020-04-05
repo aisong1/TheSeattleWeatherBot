@@ -20,14 +20,20 @@ public class SeattleWeatherBot {
 
             ConfigurationBuilder cb = new ConfigurationBuilder();
             cb.setDebugEnabled(true)
+                    .setOAuthConsumerKey("qhq4CdE6fnyYLVuI2ao5zi5it")
+                    .setOAuthConsumerSecret("7WhT6FP0IqgyBUrsOBFM3FOKvFNMazvABscgLJlpDLNC3jrioh")
+                    .setOAuthAccessToken("1146196880725966848-Y236kqwMFaLmH7CGX675UNo1NdQb7i")
+                    .setOAuthAccessTokenSecret("GFzknaZa5WvtJecKv7kgzSUqLuX4NufUqNUW4HuZ1SwhU");
+            /* cb.setDebugEnabled(true)
                     .setOAuthConsumerKey(System.getenv("consumerKey"))
                     .setOAuthConsumerSecret(System.getenv("consumerSecret"))
                     .setOAuthAccessToken(System.getenv("accessToken"))
-                    .setOAuthAccessTokenSecret(System.getenv("accessTokenSecret"));
+                    .setOAuthAccessTokenSecret(System.getenv("accessTokenSecret")); */
             TwitterFactory tf = new TwitterFactory(cb.build());
             Twitter twitter = tf.getInstance();
 
-            OWM owm = new OWM(System.getenv("OWM_API_KEY"));
+            //OWM owm = new OWM(System.getenv("OWM_API_KEY"));
+            OWM owm = new OWM("e26a2a9e5da4b9f33506d24dac1c0d90");
             owm.setUnit(OWM.Unit.IMPERIAL);
             CurrentWeather cwd = owm.currentWeatherByCityId(5809844);
 
@@ -40,7 +46,7 @@ public class SeattleWeatherBot {
             }
 
             // Set from UTC (used on Heroku servers) to Seattle local time, PST.
-            LocalDateTime now = LocalDateTime.now().plusHours(-7);
+            LocalDateTime now = LocalDateTime.now().plusHours(-9);
             ZoneId id = ZoneId.of("America/Los_Angeles");
             ZonedDateTime zonedDateTime = ZonedDateTime.of(now, id);
             String formattedDate = DateTimeFormatter.ofPattern("MM-dd-yyyy HH:mm").format(zonedDateTime);
@@ -54,8 +60,8 @@ public class SeattleWeatherBot {
             String rain3H = "There has been " + rain + " mm of rain in the last three hours.";
             String message = dateTime + currTemp + minMaxTemp + rain3H;
             System.out.println(message);
-            Status status = twitter.updateStatus(message);
-            System.out.println("Successfully updated the status to [" + status.getText() + "].");
+            //Status status = twitter.updateStatus(message);
+            //System.out.println("Successfully updated the status to [" + status.getText() + "].");
 
         } catch (Exception e) {
             e.printStackTrace();
