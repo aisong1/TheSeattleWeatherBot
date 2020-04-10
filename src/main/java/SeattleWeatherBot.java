@@ -39,8 +39,8 @@ public class SeattleWeatherBot {
                 rain = 0;
             }
 
-            // Set from UTC (used on Heroku servers) to Seattle local time, PST.
-            LocalDateTime now = LocalDateTime.now().plusHours(-9);
+            // Retrieves date (PST) 
+            LocalDateTime now = LocalDateTime.now();
             ZoneId id = ZoneId.of("America/Los_Angeles");
             ZonedDateTime zonedDateTime = ZonedDateTime.of(now, id);
             String formattedDate = DateTimeFormatter.ofPattern("MM-dd-yyyy HH:mm").format(zonedDateTime);
