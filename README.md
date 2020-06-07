@@ -142,7 +142,7 @@ The reason I chose to write this project in Java was because Java is the languag
 
 I'm an aspiring software developer looking for full-time positions in the Greater Seattle Area! 
 
-Connect with me on [LinkedIn](https://www.linkedin/in/andrewisong) or check out my [website](aisong1.github.io).
+Connect with me on [LinkedIn](https://www.linkedin.com/in/andrewisong) or check out my [website](https://aisong1.github.io).
 
 # Licensing
 
