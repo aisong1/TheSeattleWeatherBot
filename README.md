@@ -150,5 +150,5 @@ Connect with me on [LinkedIn](https://www.linkedin.com/in/andrewisong) or check 
 
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
 - Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-- Copyright 2020 © [Andrew Song](https://www.linkedin/in/andrewisong)
+- Copyright 2020 © [Andrew Song](https://aisong1.github.io)
 
