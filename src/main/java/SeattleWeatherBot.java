@@ -39,7 +39,7 @@ public class SeattleWeatherBot {
                 rain = 0;
             }
 
-            // Retrieves date (PST) 
+            // Retrieves date (PST)
             LocalDateTime now = LocalDateTime.now();
             ZoneId id = ZoneId.of("America/Los_Angeles");
             ZonedDateTime zonedDateTime = ZonedDateTime.of(now, id);
